@@ -1,5 +1,5 @@
 import type { ResLyric, ResSongDetail } from "@/types/response";
-import request from "./base/request";
+import request from "./request";
 
 /**
  * 获取歌曲详情

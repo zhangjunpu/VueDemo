@@ -1,6 +1,6 @@
 import type { SongList } from "@/types/data";
 import type { ResArtists, ResBanner, ResDJAnchor, ResHotRecommend, ResNewAlbum, ResRanking } from "@/types/response";
-import request from "./base/request";
+import request from "./request";
 
 /**
  * banner 数据

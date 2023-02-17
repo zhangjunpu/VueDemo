@@ -1,10 +1,9 @@
 import axios from "axios";
-
-import { BASE_URL, TIMEOUT } from "./config";
+import { baseURL, timeout } from "./config";
 
 const instance = axios.create({
-  baseURL: BASE_URL,
-  timeout: TIMEOUT,
+  baseURL,
+  timeout,
 });
 
 /**
@@ -29,7 +28,7 @@ instance.interceptors.response.use(
   (res) => res.data,
   (err) => {
     if (err && err.response) {
-      switch (err.request.status) {
+      switch (err.response.status) {
         case 400:
           console.log("请求错误");
           break;
