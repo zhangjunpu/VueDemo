@@ -1,4 +1,4 @@
-import { reactive, computed } from "vue";
+import { reactive, computed, toRefs } from "vue";
 import { defineStore } from "pinia";
 
 import type { Banner } from "@/types/data";
@@ -19,9 +19,8 @@ export const useRecommendStore = defineStore("recommend", () => {
 
   const requestBannersAction = async () => {
     const res = await requestTopBanners();
-    console.log(res);
     state.banners = res.banners;
   };
 
-  return { state, topFour, requestBannersAction };
+  return { ...toRefs(state), topFour, requestBannersAction };
 });
